@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!-- <meta charset="UTF-8"> -->
+      <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>My Library</title>
+      <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div>
+      <h1>My Library</h1>
+  </div>
+    <div>
+    </div>
+    <div style="text-align:center;">
+      <button class='button' data-modal-target="#modal"><span>&#43;</span> Add your book </button>
+    </div>
+    <br>
+    <br>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="popTitle">Book Details</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div>
+          Complete the form to add a book to your personal library
+        </div>
+        <br>
+        <form action="/" method="post" id="bookSubmit">
+          <div>
+              <label for="title">Title:</label>
+              <input type="text" id="title" required>
+          </div>
+          <div>
+              <label for="author">Author:</label>
+              <input type="text" id="author" required>
+          </div>
+          <div>
+              <label for="pages">Pages:</label>
+              <input type="number" min="1" id="pages" required>
+          </div>
+          <div>
+              <label for="read">Select if Read:</label>
+              <input type="checkbox" id="read">
+          </div>
+          <div>
+              <button data-close-after-submit type="submit">Add Book</button>
+          </div>
+      </form>
+      </div>
+    </div>
+    
+    <div id="overlay"></div>
+
+    <!-- Display cards of books submitted by user -->
+
+    <br>
+    <div id="libContainer">
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+

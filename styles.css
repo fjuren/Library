@@ -1,0 +1,236 @@
+/* --------------- General page styling ------------------ */
+
+body {
+  background-color: #D8DEE9;
+  /* background-color: #2E3440; */
+}
+
+h1 {
+  margin-left: center;
+  color: #2E3440
+  ;
+}
+
+.card {
+  /* background-color: #81A1C1; */
+  background-color: aliceblue;
+  ;
+  /* background-color: #3B4252 */
+}
+
+span {
+  content: "\002B";
+  font-size: 2rem;
+}
+
+.button {
+  background-color: #D8DEE9;
+  color: #4C566A;
+  border: 2px solid #D8DEE9;
+  font-size: 2rem;
+}
+
+.button:hover {
+  background-color: #555555;
+  color: #D8DEE9;
+  border-radius: 12px;
+}
+
+/* --------------- popup styling 0------------------- */
+*, *::after, *::before {
+  box-sizing: border-box;;
+}
+
+/* #modal {
+  left: 50%;
+} */
+
+.modal {
+  position: fixed;
+  /* % 50% of screen */
+  top: 30%;
+  left: 50%;
+  /* 50% of container */
+  transform: translate(-50%, -50%) scale(0); 
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1); 
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .popTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+  /* to still have ability to click on buttons */
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+/* ------------------------------------------------------ */
+
+
+/* Set library using grid layout */
+#libContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-rows: 300px;
+  grid-auto-columns: 200px;
+  grid-auto-rows: 300px;
+  gap: 15px;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 12px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+
+/* tag styling */
+h4, p {
+  margin: 0;
+  color: #2E3440;
+}
+
+p {
+  padding-bottom: 10px;
+  color: #2E3440;
+}
+
+/* remove book button styling */
+
+.removeCard {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.removeCard>button {
+  text-align: center;
+  background-color: aliceblue;
+  border: 1px solid aliceblue;
+  color: red;
+  font-size: 1rem;
+}
+
+.removeCard>button:hover {
+  background-color: #555555;
+  color: #D8DEE9;
+}
+
+/* ---------------------------   Card Read Switch--------------------------- */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #BF616A  ;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #002c50;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #A3BE8C;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #A3BE8C;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

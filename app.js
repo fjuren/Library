@@ -180,12 +180,22 @@ function uuid() {
 };
 
 // object constructor for Book object
-function Book(title, author, pages, read) {
-  this.bookID = uuid() // INT
-  this.title = title  // string
-  this.author = author // string
-  this.pages = pages  // integer
-  this.read = read    // boolean
+// function Book(title, author, pages, read) {
+//   this.bookID = uuid() // INT
+//   this.title = title  // string
+//   this.author = author // string
+//   this.pages = pages  // integer
+//   this.read = read    // boolean
+// }
+
+class Book {
+  constructor(title, author, pages, read) {
+    this.bookID = uuid()  // integer
+    this.title = title    // string
+    this.author = author  // string
+    this. pages = pages   // integer
+    this. read = read     // boolean
+  }
 }
 
 // User Input
